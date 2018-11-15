@@ -15,7 +15,7 @@
  const channelFor  = document.getElementById('channel-form');
  const channelInput = document.getElementById('channel-input');
  const videoContainer = document.getElementById('video-container');
- const defaultChannel = 'techguyweb';
+ const defaultChannel = 'Traversy Media';
 
  /**
        *  On load, called to load the auth2 library and API client library.
@@ -88,8 +88,8 @@
        */
       function getChannel(channel) {
         gapi.client.youtube.channels.list({
-          'part': 'snippet,contentDetails,statistics',
-          'forUsername': channel
+          part: 'snippet,contentDetails,statistics',
+          forUsername: channel
         }).then(response =>{
             console.log(response);
             const channel = response.result.items[0];
