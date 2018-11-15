@@ -20,9 +20,36 @@
             </div>
         </div>
     </nav>
+    <br>
+    <section>
+        <div class="container">
+            <p>Log In With Google</p>
+            <button class="btn red" id="authorize-button">Log In</button>
+            <button class="btn red" id="signout-button">Log out</button>
+            <br>
+            <div id="content">
+                <div class="row">
+                    <div class="col s6">
+                        <form id="channel-form">
+                            <div class="input-field cols6">
+                                <input type="text" placeholder="Enter Channel Name" id="channel-input">
+                                <input type="submit" value="Get Channel Data" class="btn grey lighten-2">
+                            </div>
+                        </form>
+                    </div>
+                    <div id="channel-data" class="col s6">
+                    </div>
+                    <div class="row" id="vide-container"></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <script src="main.js"></script>
+    <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()"
+        onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
