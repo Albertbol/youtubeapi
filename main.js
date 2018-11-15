@@ -12,7 +12,7 @@
  const authorizeButton = document.getElementById('authorize-button');
  const signoutButton = document.getElementById('signout-button');
  const content = document.getElementById('content');
- const channelFor  = document.getElementById('channel-form');
+ const channelForm  = document.getElementById('channel-form');
  const channelInput = document.getElementById('channel-input');
  const videoContainer = document.getElementById('video-container');
  const defaultChannel = 'Traversy Media';
