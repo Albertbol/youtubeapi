@@ -54,7 +54,7 @@
           signoutButton.style.display = 'block';
           content.style.display = 'block';
           videoContainer.style.display = 'block';
-          getChannel(defaultChannel);
+          getChannel();
         } else {
           authorizeButton.style.display = 'block';
           signoutButton.style.display = 'none';
@@ -86,10 +86,10 @@
       /**
        * Print files.
        */
-      function getChannel(channel) {
+      function getChannel() {
         gapi.client.youtube.channels.list({
           part: 'snippet,contentDetails,statistics',
-          forUsername: channel
+          forUsername: 'techguyweb'
         }).then(response =>{
             console.log(response);
             const channel = response.result.items[0];
