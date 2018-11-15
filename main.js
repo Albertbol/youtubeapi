@@ -66,22 +66,23 @@
        /**
        *  Sign in the user upon button click.
        */
-      function handleAuthClick(event) {
+      function handleAuthClick() {
         gapi.auth2.getAuthInstance().signIn();
       }
 
       /**
        *  Sign out the user upon button click.
        */
-      function handleSignoutClick(event) {
+      function handleSignoutClick() {
         gapi.auth2.getAuthInstance().signOut();
       }
 
       /**
        * Print files.
        */
-      function getChannel() {
-        gapi.client.youtube.channels.list({
+      function getChannel(channel) {
+          console.log(channel);
+       /*  gapi.client.youtube.channels.list({
           'part': 'snippet,contentDetails,statistics',
           'forUsername': 'GoogleDevelopers'
         }).then(function(response) {
@@ -89,5 +90,5 @@
           appendPre('This channel\'s ID is ' + channel.id + '. ' +
                     'Its title is \'' + channel.snippet.title + ', ' +
                     'and it has ' + channel.statistics.viewCount + ' views.');
-        });
+        }); */
       }
