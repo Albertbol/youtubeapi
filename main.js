@@ -82,13 +82,15 @@
        */
       function getChannel(channel) {
           console.log(channel);
-       /*  gapi.client.youtube.channels.list({
+        gapi.client.youtube.channels.list({
           'part': 'snippet,contentDetails,statistics',
-          'forUsername': 'GoogleDevelopers'
-        }).then(function(response) {
+          'forUsername': channel
+        }).then((response) =>{
+            console.log(response);
           var channel = response.result.items[0];
           appendPre('This channel\'s ID is ' + channel.id + '. ' +
                     'Its title is \'' + channel.snippet.title + ', ' +
                     'and it has ' + channel.statistics.viewCount + ' views.');
-        }); */
+        })
+        .catch(err => alert('No channel by that name'));
       }
