@@ -104,9 +104,9 @@
             <ul class="collection">
                 <li class="collection-item">Title: ${channel.snippet.title}</li>
                 <li class="collection-item">ID: ${channel.id}</li>
-                <li class="collection-item">Subscribers: ${(channel.statistics.subscriberCount).toLocaleString()}</li>
-                <li class="collection-item">Views: ${(channel.statistics.viewCount).toLocaleString()}</li>
-                <li class="collection-item">Videos: ${(channel.statistics.videoCount).toLocaleString()}</li>
+                <li class="collection-item">Subscribers: ${(channel.statistics.subscriberCount).toLocaleString('en')}</li>
+                <li class="collection-item">Views: ${(channel.statistics.viewCount).toLocaleString('en')}</li>
+                <li class="collection-item">Videos: ${(channel.statistics.videoCount).toLocaleString('en')}</li>
             </ul>
             <p>${channel.snippet.description}</p>
             <hr>
