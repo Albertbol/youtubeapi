@@ -99,11 +99,12 @@
           forUsername: channel
         }).then(response =>{
             console.log(response);
+            const x = channel.id;
             const channel = response.result.items[0];
             const output = `
             <ul class="collection">
                 <li class="collection-item">Title: ${channel.snippet.title}</li>
-                <li class="collection-item">ID: ${channel.id}</li>
+                <li class="collection-item">ID: ${x.toLocaleString()}</li>
                 <li class="collection-item">Subscribers: ${numberWithCommas(channel.statistics.subscriberCount)}</li>
                 <li class="collection-item">Views: ${numberWithCommas(channel.statistics.viewCount)}</li>
                 <li class="collection-item">Videos: ${numberWithCommas(channel.statistics.videoCount)}</li>
