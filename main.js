@@ -20,7 +20,7 @@
  // Form submit and change channel
  channelForm.addEventListener('submit', e => {
      e.preventDefault();
-     const channel = channelInput.nodeValue;
+     const channel = channelInput.value;
 
      getChannel(channel);
  })
@@ -62,7 +62,6 @@
           signoutButton.style.display = 'block';
           content.style.display = 'block';
           videoContainer.style.display = 'block';
-          getChannel();
         } else {
           authorizeButton.style.display = 'block';
           signoutButton.style.display = 'none';
