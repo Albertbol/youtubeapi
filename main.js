@@ -112,6 +112,9 @@
             <a class="btn grey darken-2" target="_blank" href="https://youtube.com/${channel.snippet.customUrl}">Visit channel</a>
             `;
             showChannelData(output);
+
+            const playlistId = channel.contentDetails.relatedPlaylist.uploads;
+            requestVideoPlaylist(playlistId);
         })
         .catch(err => alert('No channel by that name'));
       }
@@ -119,4 +122,18 @@
       // Add commas to number
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+
+  function requestVideoPlaylist(playlistId) {
+      const requestOptions = {
+          playlistId: playlistId,
+          part: 'snippet',
+          maxResults: 20
+      }
+
+      const request = gapi.client.youtube.playlistItems.list(requestOptions);
+
+      request.execute(response => {
+          console.log(response);
+      })
   }
