@@ -114,6 +114,7 @@
             showChannelData(output);
 
             const playlistId = channel.contentDetails.relatedPlaylist.uploads;
+            console.log(playlistId);
             requestVideoPlaylist(playlistId);
         })
         .catch(err => alert('No channel by that name'));
@@ -125,11 +126,12 @@ function numberWithCommas(x) {
   }
 
   function requestVideoPlaylist(playlistId) {
+      console.log('lets go '+playlistId);
       const requestOptions = {
           playlistId: playlistId,
           part: 'snippet',
           maxResults: 20
-      }
+      };
 
       const request = gapi.client.youtube.playlistItems.list(requestOptions);
 
