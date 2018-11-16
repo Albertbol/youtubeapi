@@ -116,7 +116,6 @@
             showChannelData(output);
 
             const playlistId = channel.contentDetails.relatedPlaylists.uploads;
-            console.log(playlistId);
             requestVideoPlaylist(playlistId);
         })
         .catch(err => alert(err));
@@ -128,7 +127,6 @@ function numberWithCommas(x) {
   }
 
   function requestVideoPlaylist(playlistId) {
-      console.log('lets go '+playlistId);
       const requestOptions = {
           playlistId: playlistId,
           part: 'snippet',
@@ -139,5 +137,25 @@ function numberWithCommas(x) {
 
       request.execute(response => {
           console.log(response);
+          const playlistItems = response.result.items;
+          if(playlistItems) {
+            let output= `<h4 class='center-align">Latest Videos</h4>`;
+
+            //loop through videos and append output
+            playlistItems.forEach(item => { 
+                const videoId = item.snippet.resourceId.videoId;
+
+                output += `
+                    <div class="col s3">
+                    <iframe width="100%" height="auto" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                `;
+            });
+            //Output videos
+            videoContainer.innerHTML = output;
+
+          } else {
+              videoContainer.innerHTML = 'No uploaded videos';
+          }
       })
   }
