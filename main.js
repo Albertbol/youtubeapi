@@ -113,7 +113,7 @@
             `;
             showChannelData(output);
 
-            const playlistId = channel.contentDetails.relatedPlaylist.uploads;
+            const playlistId = channel.contentDetails.relatedPlaylists.uploads;
             console.log(playlistId);
             requestVideoPlaylist(playlistId);
         })
