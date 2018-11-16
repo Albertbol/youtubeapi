@@ -62,6 +62,7 @@
           signoutButton.style.display = 'block';
           content.style.display = 'block';
           videoContainer.style.display = 'block';
+          getChannel(defaultChannel);
         } else {
           authorizeButton.style.display = 'block';
           signoutButton.style.display = 'none';
@@ -98,6 +99,7 @@
           part: 'snippet,contentDetails,statistics',
           forUsername: channel
         }).then(response =>{
+            console.log(response);
             const channel = response.result.items[0];
             const output = `
             <ul class="collection">
