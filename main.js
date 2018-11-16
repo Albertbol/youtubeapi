@@ -15,7 +15,7 @@
  const channelForm  = document.getElementById('channel-form');
  const channelInput = document.getElementById('channel-input');
  const videoContainer = document.getElementById('video-container');
- const defaultChannel = 'Traversy Media';
+ const defaultChannel = 'techguyweb';
 
  // Form submit and change channel
  channelForm.addEventListener('submit', e => {
@@ -117,7 +117,7 @@
             console.log(playlistId);
             requestVideoPlaylist(playlistId);
         })
-        .catch(err => alert('No channel by that name'));
+        .catch(err => alert(err));
       }
 
       // Add commas to number
