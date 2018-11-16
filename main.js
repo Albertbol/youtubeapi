@@ -118,7 +118,7 @@
             const playlistId = channel.contentDetails.relatedPlaylists.uploads;
             requestVideoPlaylist(playlistId);
         })
-        .catch(err => alert(err));
+        .catch(err => alert('No such a channel, please try again'));
       }
 
       // Add commas to number
