@@ -146,7 +146,7 @@ function numberWithCommas(x) {
                 const videoId = item.snippet.resourceId.videoId;
 
                 output += `
-                    <div class="col s3">
+                    <div class="col xl4 l4 m2 s1">
                     <iframe width="100%" height="auto" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 `;
